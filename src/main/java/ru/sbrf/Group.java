@@ -1,10 +1,7 @@
-package ru.sbrf.model;
+package ru.sbrf;
 
 import java.util.ArrayList;
 
-/**
- * Created by Wais on 28.11.2016.
- */
 public class Group {
     private final long groupId;
     private ArrayList<Long> members;

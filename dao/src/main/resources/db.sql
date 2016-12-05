@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS ACCOUNTS(
+  id INT PRIMARY KEY ,
+  login VARCHAR(20),
+  password VARCHAR(20),
+)
+CREATE TABLE IF NOT EXISTS USERDATA(
+  account_id INT,
+  first_name VARCHAR(20),
+  middle_name VARCHAR(20),
+  last_name VARCHAR(20),
+  birthday DATETIME
+  city VARCHAR(20),
+  country VARCHAR(20)
+)
+CREATE SEQUENCE ACC_SEQ (
+  MINVALUE 1
+  START WITH 1
+  INCREMENT BY 1
+  )
