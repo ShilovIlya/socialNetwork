@@ -13,6 +13,7 @@ public class UserData {
     private String city;
     private String country;
     private ArrayList<Long> groups;
+    private ArrayList<Chat> friendChats;
 
     public UserData(Long accountId) {
         this.accountId = accountId;
@@ -54,5 +55,37 @@ public class UserData {
 
     public void setAccountId(Long accountId) {
         this.accountId = accountId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public ArrayList<Long> getGroups() {
+        return groups;
+    }
+
+    public ArrayList<Chat> getFriendChats() {
+        return friendChats;
     }
 }

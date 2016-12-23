@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+<changeSet id="schema_user_accounts" author="Ilya">
+    <createTable tableName="ACCOUNTS">
+        <column name="id" autoIncrement="true" type="int">
+            <constraints primaryKey="true" nullable="false"/>
+        </column>
+        <column name="login" type="varchar(128)"/>
+        <column name="password" type="varchar(128)"/>
+    </createTable>
+    <createTable tableName="USERDATA">
+        <column name="account_id" autoIncrement="false" type="int">
+            <constraints foreignKeyName="fk_userdata_accounts" references="ACCOUNTS(id)" nullable="false"/>
+        </column>
+        <column name="first_name" type="varchar(128)"/>
+        <column name="middle_name" type="varchar(128)"/>
+        <column name="last_name" type="varchar(128)"/>
+        <column name="birthday" type="datetime"/>
+        <column name="city" type="varchar(128)"/>
+        <column name="country" type="varchar(128)"/>
+    </createTable>
+</changeSet>
+<changeSet id="data_user_managment" author="Ilya">
+    <insert tableName="ACCOUNTS">
+        <column name="id">1</column>
+        <column name="login">admin</column>
+        <column name="password">admin</column>
+    </insert>
+    <insert tableName="ACCOUNTS">
+        <column name="id">2</column>
+        <column name="login">guest</column>
+        <column name="password">guest</column>
+    </insert>
+    <insert tableName="USERDATA">
+        <column name="account_id">1</column>
+        <column name="first_name">Ilya</column>
+        <column name="middle_name">Middle</column>
+        <column name="last_name">Shilov</column>
+        <column name="birthday"> 1994-03-07</column>
+        <column name="city"> SPb</column>
+        <column name="country">Russia</column>
+    </insert>
+    <insert tableName="USERDATA">
+        <column name="account_id">2</column>
+        <column name="first_name">Илья</column>
+        <column name="middle_name">Отчество</column>
+        <column name="last_name">Шилов</column>
+        <column name="birthday"> 1992-02-02</column>
+        <column name="city"> СПб</column>
+        <column name="country">Россия</column>
+    </insert>
+</changeSet>
+
+</databaseChangeLog>
