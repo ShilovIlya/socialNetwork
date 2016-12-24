@@ -1,4 +1,4 @@
-package ru.sbrf;
+package ru.sbrf.model;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package ru.sbrf;
+package ru.sbrf.model;
 
 public class MessageData {
     private String text;

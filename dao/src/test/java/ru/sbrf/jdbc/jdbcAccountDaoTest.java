@@ -1,15 +1,6 @@
 package ru.sbrf.jdbc;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import ru.sbrf.Account;
-import ru.sbrf.AccountDao;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-
-import static org.junit.Assert.*;
 
 public class jdbcAccountDaoTest {
 

@@ -1,17 +1,30 @@
-package ru.sbrf;
+package ru.sbrf.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.persistence.*;
 
-public class UserData {
 
+@Entity(name = "USERDATA")
+public class UserData implements Serializable {
+    private static final long serialVersionUID = 3931814872085163347L;
+
+    @Column(name = "account_id", length = 128, nullable = false)
     private Long accountId;
+    @Column(name = "first_name", length = 128, nullable = false)
     private String firstName;
+    @Column(name = "second_name", length = 128, nullable = false)
     private String secondName;
+    @Column(name = "last_name", length = 128, nullable = false)
     private String lastName;
+    @Column(name = "birth_day")
     private Date birthday;
+    @Column(name = "city")
     private String city;
+    @Column(name = "country")
     private String country;
+    @Column(name = "birth_day")
     private ArrayList<Long> groups;
     private ArrayList<Chat> friendChats;
 
@@ -32,7 +45,6 @@ public class UserData {
     }
 
     public void setBirthday(Date birthday) {
-        //TODO: check Date
         this.birthday = birthday;
     }
 
@@ -45,7 +57,6 @@ public class UserData {
     }
 
     public void addGroup(Long groupId) {
-        //TODO: check group unique
         groups.add(groupId);
     }
 
@@ -89,3 +100,4 @@ public class UserData {
         return friendChats;
     }
 }
+

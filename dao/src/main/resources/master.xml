@@ -18,9 +18,9 @@
             <constraints foreignKeyName="fk_userdata_accounts" references="ACCOUNTS(id)" nullable="false"/>
         </column>
         <column name="first_name" type="varchar(128)"/>
-        <column name="middle_name" type="varchar(128)"/>
+        <column name="second_name" type="varchar(128)"/>
         <column name="last_name" type="varchar(128)"/>
-        <column name="birthday" type="datetime"/>
+        <column name="birth_day" type="datetime"/>
         <column name="city" type="varchar(128)"/>
         <column name="country" type="varchar(128)"/>
     </createTable>

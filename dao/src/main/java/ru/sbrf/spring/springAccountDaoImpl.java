@@ -1,6 +1,5 @@
 package ru.sbrf.spring;
 
-import org.springframework.stereotype.Repository;
 import ru.sbrf.Account;
 import ru.sbrf.AccountDao;
 
